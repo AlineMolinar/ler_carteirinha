@@ -113,7 +113,7 @@ void loop() {
       Serial.println(); 
 
       lv_obj_set_style_bg_color(lv_scr_act(), lv_color_hex(0x00A32A), LV_PART_MAIN);
-      lv_label_set_text(texto, "Aluno \npresente");
+      lv_label_set_text(texto, "Carteirinha \ndetectada!");
       //lv_label_set_text(texto, uidStr);
       lv_timer_handler();
       
