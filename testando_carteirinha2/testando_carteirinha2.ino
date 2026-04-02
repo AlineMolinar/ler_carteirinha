@@ -95,7 +95,6 @@ void loop() {
     //ler o cartao
     bool leu = sensor.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 100);
 
-  //char uidStr[50] = "";
    if (leu) {
       Serial.println("\nCARTAO IDENTIFICADO");
       
@@ -104,17 +103,11 @@ void loop() {
         Serial.print(" 0x");
         if (uid[i] < 0x10) Serial.print("0"); 
         Serial.print(uid[i], HEX);
-
-        // char buffer[5];
-        // sprintf(buffer, "%02X", uid[i]);
-        // strcat(uidStr, buffer);
-
       }
       Serial.println(); 
 
       lv_obj_set_style_bg_color(lv_scr_act(), lv_color_hex(0x00A32A), LV_PART_MAIN);
       lv_label_set_text(texto, "Carteirinha \ndetectada!");
-      //lv_label_set_text(texto, uidStr);
       lv_timer_handler();
       
       delay(2000);
